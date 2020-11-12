@@ -1,0 +1,16 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[uspDealers_ByDealerID]
+@DealerID AS VARCHAR(10)
+AS 
+BEGIN
+	SET NOCOUNT ON;
+	SELECT 
+	*
+	FROM testDealer
+	WHERE DealerID = @DealerID
+	ORDER BY DealerID, State, Zip, Name, StartDate ASC;
+END
+GO
